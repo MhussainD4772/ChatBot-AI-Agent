@@ -325,6 +325,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with ❤️ and lots of ☕**
 
-![Footer](https://media.giphy.com/media/26BRrSvJUaB0Z2gso/giphy.gif)
+<div align="center">
+
+![AI Brain](https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif)
+
+**🚀 Ready to revolutionize conversations with AI!**
+
+</div>
 
 </div>
