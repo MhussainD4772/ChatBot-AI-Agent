@@ -9,7 +9,11 @@ easier to manage.
 Author: Mohammed (SDET & AI Enthusiast)
 """
 
-from database import DatabaseManager
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from src.database.database import DatabaseManager
 
 # Original training data from main.py
 # This is what we're moving to the database

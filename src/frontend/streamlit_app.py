@@ -26,8 +26,12 @@ import os
 # Add the current directory to Python path so we can import our modules
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from database import DatabaseManager
-from main import DatabaseChatbot
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from database.database import DatabaseManager
+from ml.main import DatabaseChatbot
 
 # Page configuration
 st.set_page_config(

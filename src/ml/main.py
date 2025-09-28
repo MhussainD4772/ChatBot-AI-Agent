@@ -19,7 +19,11 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 import spacy
-from database import DatabaseManager
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from database.database import DatabaseManager
 
 # Load the English language model for text preprocessing
 nlp = spacy.load("en_core_web_sm")

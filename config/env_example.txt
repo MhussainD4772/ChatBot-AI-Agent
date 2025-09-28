@@ -1,0 +1,14 @@
+# API Keys for Chatbot
+# Copy this file to .env and add your actual API keys
+
+# OpenWeatherMap API Key
+# Get your free key at: https://openweathermap.org/api
+WEATHER_API_KEY=your_weather_api_key_here
+
+# NewsAPI Key
+# Get your free key at: https://newsapi.org/
+NEWS_API_KEY=your_news_api_key_here
+
+# CoinGecko API (No key required - completely free!)
+# Just leave this empty
+CRYPTO_API_KEY=

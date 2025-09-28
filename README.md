@@ -103,10 +103,10 @@ python -m spacy download en_core_web_sm
 createdb chatbot_db
 
 # 6. Run database migration
-python migrate_data.py
+python scripts/migrate_data.py
 
 # 7. Launch the application
-streamlit run streamlit_app.py
+python run_webapp.py
 ```
 
 </details>
@@ -205,13 +205,32 @@ streamlit run streamlit_app.py
 
 ```
 ChatBot-AI-Agent/
-├── 🤖 main.py                 # Core chatbot logic
-├── 🗄️ database.py             # PostgreSQL integration
-├── 🌐 streamlit_app.py        # Web frontend
-├── 📊 migrate_data.py         # Database migration
-├── 🧪 test_frontend.py        # Testing utilities
-├── 📋 requirements.txt        # Dependencies
-├── 🐘 chatbot_db/            # Database files
+├── 📁 src/                    # Source code
+│   ├── 📁 api/               # API integrations
+│   │   ├── __init__.py
+│   │   └── api_manager.py    # Weather, News, Crypto APIs
+│   ├── 📁 database/          # Database operations
+│   │   ├── __init__.py
+│   │   └── database.py       # PostgreSQL integration
+│   ├── 📁 ml/                # Machine learning
+│   │   ├── __init__.py
+│   │   └── main.py           # Core chatbot logic
+│   └── 📁 frontend/          # Web interface
+│       ├── __init__.py
+│       └── streamlit_app.py  # Streamlit web app
+├── 📁 config/                # Configuration files
+│   └── env_example.txt       # API keys template
+├── 📁 tests/                 # Test files
+│   ├── test_apis.py          # API testing
+│   └── test_frontend.py      # Frontend testing
+├── 📁 scripts/               # Utility scripts
+│   ├── setup.py              # Project setup
+│   └── migrate_data.py       # Database migration
+├── 📁 docs/                  # Documentation
+│   └── README.md             # Detailed docs
+├── 🚀 run_chatbot.py         # CLI entry point
+├── 🚀 run_webapp.py          # Web app entry point
+├── 📋 requirements.txt       # Dependencies
 └── 📚 README.md              # This file
 ```
 
@@ -221,6 +240,17 @@ ChatBot-AI-Agent/
 
 ### **Basic Chat Interaction**
 ```python
+# Run the chatbot
+python run_chatbot.py
+
+# Or run the web app
+python run_webapp.py
+```
+
+### **Programmatic Usage**
+```python
+from src.ml.main import DatabaseChatbot
+
 # Initialize chatbot
 bot = DatabaseChatbot()
 bot.load_training_data()
@@ -259,10 +289,12 @@ intents = bot.db.get_all_intents()
 - [x] Conversation logging
 
 ### **Phase 2: API Integration** 🚧
-- [ ] Weather API integration
-- [ ] News API integration  
-- [ ] Crypto price API
-- [ ] Real-time data feeds
+- [x] Weather API integration
+- [x] News API integration  
+- [x] Crypto price API
+- [x] Real-time data feeds
+- [ ] API key configuration
+- [ ] Enhanced response generation
 
 ### **Phase 3: Advanced Features** 📋
 - [ ] Multi-language support

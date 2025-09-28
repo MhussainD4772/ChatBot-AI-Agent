@@ -5,7 +5,11 @@ Test script for the Streamlit frontend
 This script tests the chatbot functionality without the web interface.
 """
 
-from main import DatabaseChatbot
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from src.ml.main import DatabaseChatbot
 
 def test_chatbot():
     """Test the chatbot functionality"""
